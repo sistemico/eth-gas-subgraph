@@ -1,0 +1,18 @@
+type BlockGasUsage @entity {
+  id: ID!
+
+  " Block height. Indicates the length of the blockchain, increases after the addition of the new block. "
+  blockNumber: BigInt!
+
+  " The block size (in bytes) is actually determined by the block's gas limit "
+  blockSize: BigInt
+
+  " The total gas used in the block "
+  gasUsed: BigInt!
+
+  " Total gas limit provided by all transactions in the block "
+  gasLimit: BigInt!
+
+  " The date and time at which the block was mined "
+  timestamp: BigInt!
+}
