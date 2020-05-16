@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -10,13 +10,14 @@ dataSources:
       abi: Ethereum
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.3
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       file: ./src/mappings.ts
       entities:
-        - BlockGasUsage
+        - Block
+        - Transaction
       abis:
         - name: Ethereum
-          file: ./abis/Ethereum.json
+          file: ./abis/Empty.json
       blockHandlers:
         - handler: handleBlock
